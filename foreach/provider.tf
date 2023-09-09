@@ -5,6 +5,17 @@ terraform {
       version = "5.15.0"
     }
   }
+
+# we are telling to the terraform dont store sate in local ,store in backend means 
+# remote in s3 bucket and lock with dynamodb
+backend "s3" {
+  bucket = "roboshop-remote-state1"
+  key = "foreach-demo"
+  region= "us-east-1"
+  dynamodb_table = "roboshop-locking"
+  
+}
+
 }
 
 provider "aws" {
