@@ -10,7 +10,7 @@ terraform {
 # remote in s3 bucket and lock with dynamodb 
 backend "s3" {
   bucket = "roboshop-remote-state1"
-  key = "foreach-demo"
+  key = "tfvars"
   region= "us-east-1"
   dynamodb_table = "roboshop-locking"
   
